@@ -1,0 +1,139 @@
+@import "../../node_modules/fontawesome-scss/fontAwesome";
+
+@mixin font($fontSize,$fontFamily,$color) {
+  font-size: $fontSize;
+  font-family: $fontFamily;
+  color: $color;
+}
+
+header {
+  background-color: #3498db;
+  padding: 15px 0;
+
+  .row {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+
+    .line_1, .line_3 {
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      border-radius: 5px;
+      margin: 3px 0;
+    }
+    .line_2 {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 5px;
+      margin: 3px 0;
+    }
+    span {
+      display: inline-block;
+    }
+  }
+  .rightSide {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 235px;
+    .input {
+      display: flex;
+      align-items: center;
+
+      .search {
+        @include fa($fa-search, white, 24px);
+        position: relative;
+        display: flex;
+        align-items: center;
+        .input-field {
+          display: flex;
+          align-items: center;
+
+          input {
+            outline: 0;
+            opacity: 0;
+            width: 0;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            transition: 1s;
+            position: absolute;
+            right: 0;
+          }
+        }
+        &:hover input {
+          opacity: 1;
+          width: 340px;
+        }
+      }
+    }
+
+    .user-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 150%;
+      }
+    }
+    .user-info {
+      .user-name {
+        span {
+          @include font(15px, latobold, white);
+        }
+      }
+      .user-status {
+        position: absolute;
+        display: flex;
+        margin-top: 5px;
+        width: 115px;
+        justify-content: space-between;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        a {
+          @include font(12px, latoregular, #2775a9);
+          text-decoration: none;
+
+        }
+        ul {
+
+          li {
+            display: none;
+
+          }
+          li:not(:first-child) {
+            margin-top: 15px;
+          }
+          li:first-child {
+            display: block;
+          }
+
+        }
+        &:hover li {
+          display: block;
+        }
+
+        .caret {
+          @include fa($fa-angle-down, #2775a9, 16px);
+
+        }
+      }
+    }
+  }
+}
+
+
+

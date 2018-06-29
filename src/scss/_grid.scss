@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  margin: 0 -15px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: ($i/12)*100%;
+  }
+}
