@@ -45,12 +45,6 @@ header {
         }
       }
     }
-    &:hover {
-      .menu_item {
-        display: block;
-      }
-    }
-
     .line_1, .line_3 {
       width: 30px;
       height: 3px;
@@ -83,6 +77,9 @@ header {
         position: relative;
         display: flex;
         align-items: center;
+        &:hover {
+          cursor: pointer;
+        }
         .input-field {
           display: flex;
           align-items: center;
@@ -97,11 +94,8 @@ header {
             transition: 1s;
             position: absolute;
             right: 0;
+            @include font(14px, latoregular, gray);
           }
-        }
-        &:hover input {
-          opacity: 1;
-          width: 340px;
         }
       }
     }
@@ -130,13 +124,7 @@ header {
         margin-top: 5px;
         width: 115px;
         justify-content: space-between;
-
-        &:hover {
-          background-color: #f5f6f8;
-          padding: 10px;
-          border-radius: 5px;
-          border: 1px solid lightgray;
-        }
+        cursor: pointer;
 
         a {
           @include font(12px, latoregular, #2775a9);
@@ -147,27 +135,17 @@ header {
         ul {
           li {
             display: none;
-
+            &:hover {
+              a {
+                color: black;
+              }
+            }
           }
           li:not(:first-child) {
             margin-top: 15px;
           }
           li:first-child {
             display: block;
-          }
-
-        }
-        &:hover {
-          li {
-            display: block;
-            border-bottom: 1px solid #c9d6df;
-            padding-bottom: 2px;
-            text-align: center;
-            &:hover {
-              a {
-                color: black;
-              }
-            }
           }
 
         }
