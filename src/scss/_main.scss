@@ -23,7 +23,6 @@ main {
       border-bottom: 1px solid lightgray;
       align-items: center;
       padding: 15px;
-
       span {
         @include font(16px, latobold, #3598db);
         letter-spacing: 2px;
@@ -36,6 +35,9 @@ main {
         text-decoration: none;
         @include font(14px, latobold, #8ea1b4);
         box-shadow: 3px 3px 10px rgb(142, 161, 180);
+        &:hover {
+          background-color: lightblue;
+        }
       }
     }
 
@@ -195,26 +197,35 @@ main {
           li:not(:last-child) {
             margin-right: 20px;
           }
-            span {
-              &:hover {
-                cursor: pointer;
-              }
+          span {
+            &:hover {
+              cursor: pointer;
             }
+          }
 
         }
         li.call {
           span {
             @include fa($fa-phone, #c9d6df, 22px);
+            &:hover {
+              @include fa($fa-phone, black, 22px);
+            }
           }
         }
         li.video {
           span {
             @include fa($fa-camera, #c9d6df, 22px);
+            &:hover {
+              @include fa($fa-camera, black, 22px);
+            }
           }
         }
         li.attachment {
           span {
             @include fa($fa-ellipsis-v, #c9d6df, 22px);
+            &:hover {
+              @include fa($fa-ellipsis-v, black, 22px);
+            }
           }
         }
       }
@@ -288,6 +299,7 @@ main {
             margin-right: 15px;
             &:hover {
               cursor: pointer;
+              @include fa($fa-paperclip, black, 22px);
             }
           }
         }
