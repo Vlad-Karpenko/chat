@@ -100,16 +100,19 @@ header {
         justify-content: space-between;
 
         &:hover {
-          cursor: pointer;
+          background-color: #f5f6f8;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid lightgray;
         }
 
         a {
           @include font(12px, latoregular, #2775a9);
           text-decoration: none;
+          display: block;
 
         }
         ul {
-
           li {
             display: none;
 
@@ -122,8 +125,19 @@ header {
           }
 
         }
-        &:hover li {
-          display: block;
+        &:hover {
+          li {
+            display: block;
+            border-bottom: 1px solid #c9d6df;
+            padding-bottom: 2px;
+            text-align: center;
+            &:hover {
+              a {
+                color: black;
+              }
+            }
+          }
+
         }
 
         .caret {
