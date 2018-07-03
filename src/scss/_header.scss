@@ -18,6 +18,38 @@ header {
   .menu {
     display: flex;
     flex-direction: column;
+    position: relative;
+    cursor: pointer;
+
+    .menu_item {
+      position: absolute;
+      display: none;
+      padding: 10px;
+      top: 25px;
+      background-color: #f5f6f8;
+      width: 150px;
+      border-radius: 5px;
+      border: 1px solid lightgray;
+      text-align: center;
+      z-index: 111;
+      div {
+        border-bottom: 1px solid #c9d6df;
+      }
+      span {
+        padding: 5px 0;
+        line-height: 2;
+        @include font(16px, latoregular, #2775a9);
+        &:hover {
+          cursor: pointer;
+          @include font(16px, latoregular, black);
+        }
+      }
+    }
+    &:hover {
+      .menu_item {
+        display: block;
+      }
+    }
 
     .line_1, .line_3 {
       width: 30px;
